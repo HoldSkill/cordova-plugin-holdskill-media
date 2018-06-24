@@ -362,6 +362,20 @@ public class AudioHandler extends CordovaPlugin {
         }
     }
 
+     /**
+     * Get dB level of recording microphone power
+     * @param id
+     * @return dB power level
+     */
+
+    public float getAudioRecordDbLevel(String id) {
+        AudioPlayer audio = this.players.get(id);
+        if (audio != null) {
+            return audio.getRecordDbLevel();
+        }
+        return -1;
+    }
+
     /**
      * Get current position of playback.
      * @param id				The id of the audio player
